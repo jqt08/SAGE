@@ -95,7 +95,7 @@
     "overrides": {
       "vite": "6.3.5"
     }
-  }
+  },
   "engines": {
     "node": ">=16"
   }
