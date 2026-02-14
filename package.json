@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
-    "lint": "echo 'No linting configured'"
+    "lint": "echo 'No linting configured'",
+    "postinstall": "rm -rf node_modules && npm install"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -94,5 +95,8 @@
     "overrides": {
       "vite": "6.3.5"
     }
+  }
+  "engines": {
+    "node": ">=16"
   }
 }
