@@ -82,7 +82,7 @@ export function DashboardPage() {
         setStats({
           totalGames: count,
           avgSentiment: Math.round(avgSentiment * 10) / 10,
-          totalPlayers: Math.round(totalPlayers / 1000),
+          totalPlayers: totalPlayers, // Remove division by 1000 to display the correct value
           positiveSentimentCount: positiveCount,
         });
 
