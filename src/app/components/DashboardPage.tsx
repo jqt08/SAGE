@@ -299,13 +299,27 @@ export function DashboardPage() {
         <div className="border border-gray-300 bg-white p-6">
           <h2 className="text-xl font-semibold mb-4">Planned Features</h2>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Continuous seeding of game data to maintain data freshness and expand the database.</li>
-            <li>Improved user interface for a more intuitive and visually appealing experience.</li>
-            <li>Feature to analyze unreleased games using alternative success prediction methods.</li>
-            <li>Comprehensive suggestions and "key insights" for predicted game success.</li>
-            <li>Integration with external APIs for real-time game data updates.</li>
-            <li>Advanced analytics for genre-specific trends and player behavior insights.</li>
-            <li>Customizable dashboards for users to tailor their analytics experience.</li>
+            <li title="Set up a cron job or serverless function to periodically fetch and seed new game data from APIs like Steam or IGDB.">
+              Continuous seeding of game data to maintain data freshness and expand the database.
+            </li>
+            <li title="Use a design system like Material-UI or Tailwind CSS to enhance the UI components and ensure responsiveness.">
+              Improved user interface for a more intuitive and visually appealing experience.
+            </li>
+            <li title="Develop a machine learning model that uses metadata (e.g., developer reputation, genre trends) to predict success for unreleased games.">
+              Feature to analyze unreleased games using alternative success prediction methods.
+            </li>
+            <li title="Generate actionable insights by analyzing key predictors like sentiment, player count, and price point, and display them alongside predictions.">
+              Comprehensive suggestions and "key insights" for predicted game success.
+            </li>
+            <li title="Integrate APIs like Steamworks or IGDB to fetch real-time game data and updates.">
+              Integration with external APIs for real-time game data updates.
+            </li>
+            <li title="Use advanced analytics libraries like D3.js or Recharts to visualize trends and player behavior by genre.">
+              Advanced analytics for genre-specific trends and player behavior insights.
+            </li>
+            <li title="Allow users to customize their dashboard layout and choose the metrics they want to see.">
+              Customizable dashboards for users to tailor their analytics experience.
+            </li>
           </ul>
         </div>
       </div>
