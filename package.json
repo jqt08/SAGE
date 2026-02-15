@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node -e \"import('vite').then(m=>m.build()).catch(e=>{console.error(e);process.exit(1)})\"",
+    "build": "vite build",
     "preview": "vite preview --port 4173",
     "start": "vite preview --port 4173",
     "vercel-build": "npm run build",
