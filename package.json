@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node node_modules/vite/bin/vite.js build",
-    "preview": "vite preview",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "start": "vite preview --port 4173",
+    "vercel-build": "npm run build",
     "lint": "echo 'No linting configured'"
   },
   "dependencies": {
