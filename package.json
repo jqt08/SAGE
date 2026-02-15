@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "start": "vite preview --port 4173",
-    "vercel-build": "npm run build",
+    "vercel-build": "node ./node_modules/vite/bin/vite.js build",
     "lint": "echo 'No linting configured'"
   },
   "dependencies": {
