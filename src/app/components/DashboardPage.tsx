@@ -294,6 +294,20 @@ export function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* Planned Features Tab */}
+        <div className="border border-gray-300 bg-white p-6">
+          <h2 className="text-xl font-semibold mb-4">Planned Features</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Continuous seeding of game data to maintain data freshness and expand the database.</li>
+            <li>Improved user interface for a more intuitive and visually appealing experience.</li>
+            <li>Feature to analyze unreleased games using alternative success prediction methods.</li>
+            <li>Comprehensive suggestions and "key insights" for predicted game success.</li>
+            <li>Integration with external APIs for real-time game data updates.</li>
+            <li>Advanced analytics for genre-specific trends and player behavior insights.</li>
+            <li>Customizable dashboards for users to tailor their analytics experience.</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
