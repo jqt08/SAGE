@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { Users, Gamepad2, ThumbsUp, TrendingUp } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
 import { getAllGamesFromDb, getGameCountFromDb, forceRefreshGameData } from '@/services/supabaseGames';
+import { PredictPage } from './PredictPage';
+import { DatasetsPage } from './DatasetsPage';
+import { ModelInsightsPage } from './ModelInsightsPage';
+import { SettingsPage } from './SettingsPage';
+import { PlannedFeaturesPage } from './PlannedFeaturesPage';
+import { Game } from '@/types/steam';
 
 const playerCountData = [
   { month: 'Jan', players: 125000 },
@@ -66,7 +72,7 @@ export function DashboardPage() {
         let positiveCount = 0;
         let gameCount = 0;
 
-        games.forEach(game => {
+        games.forEach((game: Game) => {
           gameCount++;
           const reviews = (game.positive || 0) + (game.negative || 0);
           if (reviews > 0) {
@@ -107,7 +113,7 @@ export function DashboardPage() {
       <h1 className="mb-6 md:mb-8 text-2xl sm:text-3xl">
         SAGE (Steam Analysis & Game Ensemble) Dashboard Overview
       </h1>
-      
+
       <div className="space-y-4 md:space-y-6">
         {/* Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -295,34 +301,37 @@ export function DashboardPage() {
           </div>
         </div>
 
-        {/* Planned Features Tab */}
+        {/* Planned Features Section */}
         <div className="border border-gray-300 bg-white p-6">
-          <h2 className="text-xl font-semibold mb-4">Planned Features</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li title="Set up a cron job or serverless function to periodically fetch and seed new game data from APIs like Steam or IGDB.">
-              Continuous seeding of game data to maintain data freshness and expand the database.
-            </li>
-            <li title="Use a design system like Material-UI or Tailwind CSS to enhance the UI components and ensure responsiveness.">
-              Improved user interface for a more intuitive and visually appealing experience.
-            </li>
-            <li title="Develop a machine learning model that uses metadata (e.g., developer reputation, genre trends) to predict success for unreleased games.">
-              Feature to analyze unreleased games using alternative success prediction methods.
-            </li>
-            <li title="Generate actionable insights by analyzing key predictors like sentiment, player count, and price point, and display them alongside predictions.">
-              Comprehensive suggestions and "key insights" for predicted game success.
-            </li>
-            <li title="Integrate APIs like Steamworks or IGDB to fetch real-time game data and updates.">
-              Integration with external APIs for real-time game data updates.
-            </li>
-            <li title="Use advanced analytics libraries like D3.js or Recharts to visualize trends and player behavior by genre.">
-              Advanced analytics for genre-specific trends and player behavior insights.
-            </li>
-            <li title="Allow users to customize their dashboard layout and choose the metrics they want to see.">
-              Customizable dashboards for users to tailor their analytics experience.
-            </li>
+          <h2 className="text-xl font-semibold">Planned Features</h2>
+          <ul className="list-disc pl-6 mt-2 text-gray-700">
+            <li>Continuously seed game data to maintain data freshness and expand the database.</li>
+            <li>Enhance the user interface for better usability and aesthetics.</li>
+            <li>Develop a feature to analyze unreleased games using metadata like developer reputation and genre trends.</li>
+            <li>Provide actionable insights such as key predictors like sentiment, player count, and price point.</li>
+            <li>Integrate real-time data from APIs like Steamworks or IGDB.</li>
+            <li>Create interactive charts for genre-specific trends and player behavior using libraries like D3.js or Recharts.</li>
+            <li>Allow users to customize their dashboards with drag-and-drop components and persistent settings.</li>
           </ul>
         </div>
       </div>
     </div>
   );
+}
+
+function renderActiveTab(activeTab: string) {
+  switch (activeTab) {
+    case 'dashboard':
+      return <DashboardPage />;
+    case 'predict':
+      return <PredictPage />;
+    case 'datasets':
+      return <DatasetsPage />;
+    case 'model-insights':
+      return <ModelInsightsPage />;
+    case 'settings':
+      return <SettingsPage />;
+    default:
+      return <DashboardPage />;
+  }
 }

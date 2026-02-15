@@ -1,4 +1,5 @@
 import { LayoutDashboard, TrendingUp, Database, Settings, BarChart3 } from 'lucide-react';
+import { renderActiveTab } from './DashboardPage';
 
 interface SidebarProps {
   activeTab: string;
@@ -33,6 +34,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
           );
         })}
       </nav>
+      {renderActiveTab(activeTab)}
     </aside>
   );
 }
