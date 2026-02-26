@@ -1,6 +1,7 @@
 # 🎮 Machine Learning Game Success Prediction Dashboard
 
 A production-ready web application for predicting digital game success using Steam data and machine learning. Features a clean, minimalist design with instant loading, colorful visualizations, and comprehensive analytics.
+
 In collaboration with:
 
 - Balajadia, Gabriel Patrick
